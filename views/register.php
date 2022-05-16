@@ -7,6 +7,7 @@
     <?php include '../includes/Navbar.php'; ?>
 
     <section class="register">
+    <h1 style="color:white;text-align:center;">Inscription</h1>
         <form method="post">
             <?php if (isset($error)) { ?>
                 <p style="color:red;text-align:center;"><?= $error ?></p>

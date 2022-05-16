@@ -1,5 +1,6 @@
 <?php
-require '../Actions/database.php';
+session_start();
+require ('../Actions/database.php');
 include '../Actions/functions.php';
 
 if (isset($_POST['submit'])) {

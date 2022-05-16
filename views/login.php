@@ -1,4 +1,4 @@
-<?php include '../Actions/users/createUserAction.php'; ?>
+<?php include '../Actions/users/loginAction.php'; ?>
 <!doctype html>
 <html lang="en">
 <?php include '../includes/head.php'; ?>
@@ -7,21 +7,26 @@
     <?php include '../includes/Navbar.php'; ?>
 
     <section class="login">
+    <h1 style="color:white;text-align:center;">Connexion</h1>
         <form method="post">
+
+        <?php if (isset($errorMsg)) { ?>
+                <p style="color:red;text-align:center;"><?= $errorMsg ?></p>
+            <?php } ?>
             <article class="loginInput">
                 <div class="form-group p-4">
                     <div class="form-control mx-auto w-25 text-center">
                         <div class="mb-3">
-                            <label for="registerUserNameID" class="form-label">Username\Mail </label>
-                            <input class="form-control" type="text" placeholder="Identifiant" name="registerUserName" id="registerUserNameID" value="<?php if (
-                                                                                                                                                            isset($username)
+                            <label for="loginUserNameID" class="form-label">Username\Mail </label>
+                            <input class="form-control" type="text" placeholder="Identifiant" name="loginUserName" id="loginUserNameID" value="<?php if (
+                                                                                                                                                            isset($userdata)
                                                                                                                                                         ) {
-                                                                                                                                                            echo $username;
+                                                                                                                                                            echo $userdata;
                                                                                                                                                         } ?>" />
                         </div>
                         <div class="mb-3">
                             <label for="inputPassword" class="form-label">Password </label>
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Votre Mot de passe">
+                            <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Votre Mot de passe">
                         </div>
                         <article class="loginButtons">
                             <div class="p-4">
@@ -29,7 +34,7 @@
                                     Se connecter
                                 </button>
                             </div>
-                            <a href="#">Forgot password</a>
+                            <a href=s"#">Forgot password</a>
                         </article>
                     </div>
                 </div>
