@@ -1,3 +1,4 @@
+<?php require ('../Actions/EventsActions/showEventContent.php') ?>
 <!doctype html>
 <html lang="en">
 
@@ -18,7 +19,9 @@
 </head>
 
 <body>
-
+<?php if (isset($errorMsg)){ ?>
+<p> <?= $errorMsg ;?> </p>
+<?php }else  {?>
     <!--====== PRELOADER PART START ======-->
 
     <div class="preloader">
@@ -48,7 +51,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand" href="index.html">
+                            <a class="navbar-brand" href="index.php">
                                 <img src="../assets/images/logo.png" alt="Logo">
                             </a>
 
@@ -97,8 +100,8 @@
                         <div data-countdown="2020/10/01"></div>
                         
                         <div class="header-content text-center">
-                            <h2 class="header-title">25 <sup>th</sup> Designers Meetup</h2>
-                            <h3 class="sub-title">25 September, 2022 in New York</h3>
+                            <h2 class="header-title"><?= $event_title;?></h2>
+                            <h3 class="sub-title"><?= $event_Date_Event;?></h3>
 
                             <ul class="header-btn">
                                 <li><a class="main-btn main-btn-2" href="#">Register Now</a></li>
@@ -129,7 +132,7 @@
                             <h2 class="title">About Our Meetups</h2>
                         </div> <!-- section title -->
 
-                        <p class="text mt-30">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. <br> <br> Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                        <p class="text mt-30"><?= $event_desc;?></p>
                         <p class="date"><span>25<sup>th</sup></span> December’ 19</p>
                     </div> <!-- about content -->
                 </div>
@@ -161,7 +164,7 @@
                             <i class="lni-bulb"></i>
                         </div>
                         <div class="counter-content">
-                            <span class="count counter">800</span>
+                            <span class="count counter"><?= $event_Remaining_Places;?></span>
                             <p class="text">Seats Available</p>
                         </div>
                     </div> <!-- single counter -->
@@ -1116,7 +1119,7 @@
 
     <!--====== Main js ======-->
     <script src="../assets/js/main.js"></script>
-
+<?php } ?>
 </body>
 
 </html>
