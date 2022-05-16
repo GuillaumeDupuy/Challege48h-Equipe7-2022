@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-light">
+
+<nav class="navbar navbar-expand-lg bg-light text-center" style="background-image: url(../assets/images/header-bg.jpg)">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,14 +10,15 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Créer un évenement</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="../views/register.php">Inscription</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
+          <a class="nav-link" href="../views/login.php">Connexion</a>
         </li>
+
       </ul>
     </div>
   </div>

@@ -28,6 +28,12 @@ return verify_valid_characters($str,$data);
     }
 
 }
+function User_exists($data,$strdata){
+    $mysql = new PDO('mysql:host=localhost;dbname=conference;charset=utf8;', 'root', '');
+    $req_User_Exists = $mysql->prepare("SELECT $strdata FROM utilisateurs WHERE $strdata= ?");
+    $req_User_Exists->execute(array($data));
+    return $req_User_Exists;
+}
 
 
 ?>
