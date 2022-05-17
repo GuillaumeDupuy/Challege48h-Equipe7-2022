@@ -64,7 +64,7 @@
                         <article class="registerParagraph">
                             <p id="registerReturnMessage"></p>
                         </article>
-
+                        <input type="checkbox" name="role" value="organisateur">Compte Organisateur</input>
                         <article class="registerButtons">
                             <div class="p-4">
                                 <button type="submit" name="submit" class="btn btn-dark registerSubmit">

@@ -2,7 +2,7 @@
 session_start();
 require ('../Actions/database.php');
 include '../Actions/functions.php';
-
+$role="";
 if (isset($_POST['submit'])) {
     if (
         !empty($_POST['registerUserName']) and
@@ -15,6 +15,10 @@ if (isset($_POST['submit'])) {
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $password_verif = htmlspecialchars($_POST['password']);
         $password_confirm = htmlspecialchars($_POST['confirmPassword']);
+        if(!empty($_POST['role'])){
+
+            $role=$_POST['role'];
+        }
 
         //checkers
         $checkUsername = check_Data($username, 5, 10, "l'identifiant");
@@ -36,11 +40,11 @@ if (isset($_POST['submit'])) {
             //insertion dans la bdd
             //insertion de l'utilisateur dans la base de données
             $req_Add_User = $mysql->prepare(
-                'INSERT INTO utilisateurs(identifiant,mdp,mail,admin) VALUES(?, ?, ?,?)'
+                'INSERT INTO utilisateurs(identifiant,mdp,mail,role) VALUES(?, ?, ?,?)'
             );
-            $req_Add_User->execute([$username, $password, $mail, true]);
+            $req_Add_User->execute([$username, $password, $mail, $role]);
             $getInfosOfThisUser = $mysql->prepare(
-                'SELECT id,identifiant,mail from utilisateurs WHERE identifiant = ? AND mail = ?'
+                'SELECT * from utilisateurs WHERE identifiant = ? AND mail = ?'
             );
             $getInfosOfThisUser->execute([$username, $mail]);
             $userInfos = $getInfosOfThisUser->fetch();
@@ -50,6 +54,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['identifiant'] = $userInfos['identifiant'];
             $_SESSION['mdp'] = $userInfos['mdp'];
             $_SESSION['mail'] = $userInfos['mail'];
+            $_SESSION['role']=$userInfos['role'];
             //Redirection vers la page d'Accueil
             header('Location: index.php');
         } else {
