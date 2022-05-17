@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
                 $_SESSION['mdp'] = $userInfos['mdp'];
                 $_SESSION['mail'] = $userInfos['mail'];
                 //Redirection vers la page d'Accueil
-                header('Location: event.php');
+                header('Location: index.php');
             } else { //faux mot de passe
                 $errorMsg = "Veuillez verifier les données saisies";
             }

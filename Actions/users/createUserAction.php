@@ -51,7 +51,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['mdp'] = $userInfos['mdp'];
             $_SESSION['mail'] = $userInfos['mail'];
             //Redirection vers la page d'Accueil
-            header('Location: event.php');
+            header('Location: index.php');
         } else {
             if ($user_Exists) {
                 $error_username = "$username existe déja";

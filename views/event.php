@@ -1,4 +1,6 @@
-<?php require ('../Actions/EventsActions/showEventContent.php') ?>
+<?php 
+require ('../Actions/users/Security.php');
+require ('../Actions/EventsActions/showEventContent.php') ?>
 <!doctype html>
 <html lang="en">
 
