@@ -1,5 +1,6 @@
 <?php
 require('../Actions/database.php');
+if(isset($_SESSION['role']) AND ($_SESSION['role']=="organisateur")){
 if (isset($_POST['submit'])){
     if(!empty($_POST['Title']) AND !empty($_POST['Description'])AND !empty($_POST['Date']) AND !empty($_POST['nbPlaces'])){
         $event_title=htmlspecialchars($_POST['Title']);
@@ -12,4 +13,7 @@ if (isset($_POST['submit'])){
     }else{
         $errorMsg="Veuillez compléter tous les champs";
     }
+}
+}else{
+    $error="Vous n'avez pas le droit à cette fonctionnalité";
 }

@@ -41,7 +41,7 @@
                     </div>
                         <div class="mb-3">
                             <label for="inputPassword" class="form-label">Password </label>
-                            <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Votre Mot de passe" value="<?php if (
+                            <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Votre Mot de passe" pattern="^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,}$" title="Votre mdp doit contenir au minimum 7 characters, un character special, un chiffre et une lettre Maajuscule." value="<?php if (
                                                                                                                                                         isset($password_verif)
                                                                                                                                                     ) {
                                                                                                                                                         echo $password_verif;
@@ -64,7 +64,7 @@
                         <article class="registerParagraph">
                             <p id="registerReturnMessage"></p>
                         </article>
-
+                        <input type="checkbox" name="role" value="organisateur">Compte Organisateur</input>
                         <article class="registerButtons">
                             <div class="p-4">
                                 <button type="submit" name="submit" class="btn btn-dark registerSubmit">

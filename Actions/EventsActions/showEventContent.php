@@ -1,5 +1,4 @@
 <?php
-
 require('../Actions/database.php');
 if (isset($_GET['id']) and !empty($_GET['id'])) {
     $idOfEvent = $_GET['id'];
