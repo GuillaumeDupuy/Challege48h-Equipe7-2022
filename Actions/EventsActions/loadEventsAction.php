@@ -1,5 +1,7 @@
 <?php
-
+if (!isset($_SESSION['auth'])){
+    session_start();
+    }
 require('../Actions/database.php');
 
 // Récupérer les evenements par défaut sans recherche
