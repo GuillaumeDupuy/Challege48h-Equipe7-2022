@@ -63,13 +63,11 @@ include('../includes/links.php');
                                                 <li>Location: Hall 1 , Building A, Golden Street, Southafrica</li>
                                             </ul>-->
                                 </div>
-                                <a href="<?php if ($idOfContent == "evenement") {
-                                                echo $content['titre'];
-                                            } else {
-                                                echo $content['identifiant'];
-                                            }  ?>"><button type="submit" name="submit" class="btn btn-dark eventSubmit">
+                                <?php if ($idOfContent == "evenement") { ?>
+                                <a href="editEvent.php?id=<?= $content['id'] ?>"><button type="submit" name="submit" class="btn btn-dark eventSubmit">
                                         edit
-                                    </button></a>
+                                    </button></a> 
+                                    <?php } ?>
                                 <a href="<?php if ($idOfContent == "evenement") {
                                                 echo "../Actions/EventsActions/deleteEventAction.php?id=".$content['id'];
                                             } else {

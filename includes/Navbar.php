@@ -56,10 +56,10 @@ if (isset($_SESSION['auth'])){
         </li>
         <?php }else{ ?>
         <li class="nav-item">
-          <a class="nav-link" href="../views/register.php" >Inscription</a>
+          <a class="nav-link btn-primary" href="../views/register.php" style="color: black;">Inscription</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../views/login.php" >Connexion</a>
+          <a class="nav-link btn-success" href="../views/login.php" style="color: black;">Connexion</a>
         </li>
         <?php } ?>
       </ul>
