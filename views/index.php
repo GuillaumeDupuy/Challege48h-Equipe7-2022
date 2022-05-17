@@ -9,7 +9,7 @@
 <?php include ('../includes/Navbar.php'); ?>
 <div class="row">
 <?php
-        while ($event = $getAllArticles->fetch()) {
+        while ($event = $getAllEvents->fetch()) {
         ?>
 
                 <div class="col-lg-4 col-sm-6 p-4">

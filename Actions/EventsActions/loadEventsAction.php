@@ -3,7 +3,7 @@
 require('../Actions/database.php');
 
 // Récupérer les evenements par défaut sans recherche
-$getAllArticles = $mysql->query("SELECT *  FROM evenement ");
+$getAllEvents = $mysql->query("SELECT *  FROM evenement ");
 // Vérifier si une recherche a été rentrée par l'utilisateur
 // if(isset($_GET['search']) AND !empty($_GET['search'])){
 //     // La recherche
