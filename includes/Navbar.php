@@ -7,16 +7,19 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../views/index.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="../views/index.php" style="color:white">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../views/createEvent.php">Créer un évenement</a>
+          <a class="nav-link" href="../views/createEvent.php" style="color:white">Créer un évenement</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../views/register.php">Inscription</a>
+          <a class="nav-link" href="../views/register.php" style="color:white">Inscription</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../views/login.php">Connexion</a>
+          <a class="nav-link" href="../views/login.php" style="color:white">Connexion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn-danger" href="../Actions/users/logOutAction.php" style="color:white">Deconnexion</a>
         </li>
 
       </ul>
