@@ -11,11 +11,16 @@ if (isset($_SESSION['auth'])){
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../views/index.php" style="color:white">Home</a>
+          <a class="nav-link btn-primary" aria-current="page" href="../views/index.php" style="color:white">Home</a>
         </li>
-        <?php if (isset( $roleUser) AND $roleUser=="organisateur"){ ?>
+        <?php if (isset( $roleUser) AND ($roleUser=="organisateur" or $roleUser=="admin")){ ?>
         <li class="nav-item">
-          <a class="nav-link" href="../views/createEvent.php" style="color:white">Créer un évenement</a>
+          <a class="nav-link btn-success" href="../views/createEvent.php" style="color:white">Créer un évenement</a>
+        </li>
+        <?php } ?>
+        <?php if (isset( $roleUser) AND $roleUser=="admin"){ ?>
+        <li class="nav-item">
+          <a class="nav-link btn-warning" href="../views/backOffice.php" style="color:white">BackOffice</a>
         </li>
         <?php } ?>
         <?php if (isset($roleUser)){ ?>
