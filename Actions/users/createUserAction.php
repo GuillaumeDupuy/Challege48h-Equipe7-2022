@@ -34,7 +34,6 @@ if (isset($_POST['submit'])) {
             !$user_Exists &&
             !$mail_Exists &&
             $checkUsername == 'true' &&
-            $checkPassword == 'true' &&
             $checkConfirmPassword
         ) {
             //insertion dans la bdd
@@ -65,9 +64,6 @@ if (isset($_POST['submit'])) {
             }
             if ($mail_Exists) {
                 $error_mail = "$mail existe déja";
-            }
-            if ($checkPassword != 'true') {
-                $error_Password = $checkPassword;
             }
             if (!$checkConfirmPassword) {
                 $error_ConfirmPassword = 'passwords not matching';
