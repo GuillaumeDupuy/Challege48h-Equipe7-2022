@@ -1,8 +1,7 @@
 <?php
 $mysql = new PDO('mysql:host=localhost;dbname=conference;charset=utf8;', 'root', ''); 
 
-// <?php
-// // PHP Data Objects(PDO) Sample Code:
+// PHP Data Objects(PDO) Sample Code:
 // try {
 //     $conn = new PDO("sqlsrv:server = tcp:challenge48h-database.database.windows.net,1433; Database = challenge48h-database", "guillaume", "Justinou93__");
 //     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
